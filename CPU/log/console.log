@@ -1,0 +1,337 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+SetActiveLib -work
+comp -include "$dsn\src\main.vhd" 
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints, code coverage, and assertion debug will not be available.
+# File: C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\main.vhd
+# Compile Entity "main"
+# Compile Architecture "main" of Entity "main"
+# Compile success 0 Errors 0 Warnings  Analysis time :  63.0 [ms]
+comp -include "$dsn\src\TestBench\main_TB.vhd" 
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints, code coverage, and assertion debug will not be available.
+# File: C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\TestBench\main_TB.vhd
+# Compile Entity "main_tb"
+# Compile Architecture "TB_ARCHITECTURE" of Entity "main_tb"
+# Compile Configuration "TESTBENCH_FOR_main"
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]
+asim +access +r TESTBENCH_FOR_main 
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 6465 kB (elbread=1023 elab2=5093 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\wave.asdb
+#  11:04 PM, Thursday, June 10, 2021
+#  Simulation has been initialized
+#  Selected Top-Level: testbench_for_main
+wave 
+wave -noreg CLK
+wave -noreg RESET_main
+wave -noreg BUS_Select
+wave -noreg INCREMENTPC
+wave -noreg CMD_final
+wave -noreg IR_final
+wave -noreg LD_final
+wave -noreg R_out0
+wave -noreg R_out1
+wave -noreg R_out2
+wave -noreg R_out3
+wave -noreg Select0
+wave -noreg Select1
+wave -noreg ALU_R
+wave -noreg busdata_out
+wave -noreg MemoryData
+# # The following lines can be used for timing simulation
+# # acom <backannotated_vhdl_file_name>
+# # comp -include "$dsn\src\TestBench\main_TB_tim_cfg.vhd" 
+# # asim +access +r TIMING_FOR_main 
+# 16 signal(s) traced.
+run
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__48.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__49.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__50.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__51.
+# KERNEL: WARNING: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/ControlUnit_map,  Process: line__33.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/ControlUnit_map,  Process: line__39.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 105 ns,  Iteration: 2,  Instance: /UUT/mainregisters_map,  Process: line__49.
+endsim
+# KERNEL: stopped at time: 89520480 ns
+#  Simulation has been stopped
+acom -O3 -work CPU -2002  $dsn/src/rom.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints, code coverage, and assertion debug will not be available.
+# File: C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\rom.vhd
+# Compile Entity "rom"
+# Compile Architecture "rom" of Entity "rom"
+# Compile success 0 Errors 0 Warnings  Analysis time :  63.0 [ms]
+SetActiveLib -work
+comp -include "$dsn\src\main.vhd" 
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints, code coverage, and assertion debug will not be available.
+# File: C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\main.vhd
+# Compile Entity "main"
+# Compile Architecture "main" of Entity "main"
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]
+comp -include "$dsn\src\TestBench\main_TB.vhd" 
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints, code coverage, and assertion debug will not be available.
+# File: C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\TestBench\main_TB.vhd
+# Compile Entity "main_tb"
+# Compile Architecture "TB_ARCHITECTURE" of Entity "main_tb"
+# Compile Configuration "TESTBENCH_FOR_main"
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]
+asim +access +r TESTBENCH_FOR_main 
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 6465 kB (elbread=1023 elab2=5093 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\wave.asdb
+#  11:43 PM, Thursday, June 10, 2021
+#  Simulation has been initialized
+#  Selected Top-Level: testbench_for_main
+wave 
+wave -noreg CLK
+wave -noreg RESET_main
+wave -noreg BUS_Select
+wave -noreg INCREMENTPC
+wave -noreg CMD_final
+wave -noreg IR_final
+wave -noreg LD_final
+wave -noreg R_out0
+wave -noreg R_out1
+wave -noreg R_out2
+wave -noreg R_out3
+wave -noreg Select0
+wave -noreg Select1
+wave -noreg ALU_R
+wave -noreg busdata_out
+wave -noreg MemoryData
+# # The following lines can be used for timing simulation
+# # acom <backannotated_vhdl_file_name>
+# # comp -include "$dsn\src\TestBench\main_TB_tim_cfg.vhd" 
+# # asim +access +r TIMING_FOR_main 
+# 16 signal(s) traced.
+run
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__48.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__49.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__50.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__51.
+# KERNEL: WARNING: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/ControlUnit_map,  Process: line__33.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/ControlUnit_map,  Process: line__39.
+endsim
+# KERNEL: stopped at time: 112664725 ns
+#  Simulation has been stopped
+SetActiveLib -work
+comp -include "$dsn\src\main.vhd" 
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints, code coverage, and assertion debug will not be available.
+# File: C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\main.vhd
+# Compile Entity "main"
+# Compile Architecture "main" of Entity "main"
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]
+comp -include "$dsn\src\TestBench\main_TB.vhd" 
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints, code coverage, and assertion debug will not be available.
+# File: C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\TestBench\main_TB.vhd
+# Compile Entity "main_tb"
+# Compile Architecture "TB_ARCHITECTURE" of Entity "main_tb"
+# Compile Configuration "TESTBENCH_FOR_main"
+# Compile success 0 Errors 0 Warnings  Analysis time :  63.0 [ms]
+asim +access +r TESTBENCH_FOR_main 
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+acom -O3 -work CPU -2002  $dsn/src/rom.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints, code coverage, and assertion debug will not be available.
+# File: C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\rom.vhd
+# Compile Entity "rom"
+# Compile Architecture "rom" of Entity "rom"
+# Compile success 0 Errors 0 Warnings  Analysis time :  63.0 [ms]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 6465 kB (elbread=1023 elab2=5093 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\wave.asdb
+#  11:45 PM, Thursday, June 10, 2021
+#  Simulation has been initialized
+#  Selected Top-Level: testbench_for_main
+wave 
+wave -noreg CLK
+wave -noreg RESET_main
+wave -noreg BUS_Select
+wave -noreg INCREMENTPC
+wave -noreg CMD_final
+wave -noreg IR_final
+wave -noreg LD_final
+wave -noreg R_out0
+wave -noreg R_out1
+wave -noreg R_out2
+wave -noreg R_out3
+wave -noreg Select0
+wave -noreg Select1
+wave -noreg ALU_R
+wave -noreg busdata_out
+wave -noreg MemoryData
+# # The following lines can be used for timing simulation
+# # acom <backannotated_vhdl_file_name>
+# # comp -include "$dsn\src\TestBench\main_TB_tim_cfg.vhd" 
+# # asim +access +r TIMING_FOR_main 
+# 16 signal(s) traced.
+run
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__48.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__49.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__50.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__51.
+# KERNEL: WARNING: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/ControlUnit_map,  Process: line__33.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/ControlUnit_map,  Process: line__39.
+endsim
+# KERNEL: stopped at time: 83995125 ns
+#  Simulation has been stopped
+# Adding file C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\3plus5.asdb ... Done
+# Adding file C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\3plus5.awc ... Done
+SetActiveLib -work
+comp -include "$dsn\src\main.vhd" 
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints, code coverage, and assertion debug will not be available.
+# File: C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\main.vhd
+# Compile Entity "main"
+# Compile Architecture "main" of Entity "main"
+# Compile success 0 Errors 0 Warnings  Analysis time :  78.0 [ms]
+comp -include "$dsn\src\TestBench\main_TB.vhd" 
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints, code coverage, and assertion debug will not be available.
+# File: C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\TestBench\main_TB.vhd
+# Compile Entity "main_tb"
+# Compile Architecture "TB_ARCHITECTURE" of Entity "main_tb"
+# Compile Configuration "TESTBENCH_FOR_main"
+# Compile success 0 Errors 0 Warnings  Analysis time :  63.0 [ms]
+asim +access +r TESTBENCH_FOR_main 
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+acom -O3 -work CPU -2002  $dsn/src/rom.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints, code coverage, and assertion debug will not be available.
+# File: C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\rom.vhd
+# Compile Entity "rom"
+# Compile Architecture "rom" of Entity "rom"
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 6467 kB (elbread=1023 elab2=5095 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\wave.asdb
+#  11:53 PM, Thursday, June 10, 2021
+#  Simulation has been initialized
+#  Selected Top-Level: testbench_for_main
+wave 
+wave -noreg CLK
+wave -noreg RESET_main
+wave -noreg BUS_Select
+wave -noreg INCREMENTPC
+wave -noreg CMD_final
+wave -noreg IR_final
+wave -noreg LD_final
+wave -noreg R_out0
+wave -noreg R_out1
+wave -noreg R_out2
+wave -noreg R_out3
+wave -noreg Select0
+wave -noreg Select1
+wave -noreg ALU_R
+wave -noreg busdata_out
+wave -noreg MemoryData
+# # The following lines can be used for timing simulation
+# # acom <backannotated_vhdl_file_name>
+# # comp -include "$dsn\src\TestBench\main_TB_tim_cfg.vhd" 
+# # asim +access +r TIMING_FOR_main 
+# 16 signal(s) traced.
+run
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__48.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__49.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__50.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/mainregisters_map,  Process: line__51.
+# KERNEL: WARNING: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/ControlUnit_map,  Process: line__33.
+# KERNEL: WARNING: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /UUT/ControlUnit_map,  Process: line__39.
+endsim
+# KERNEL: stopped at time: 100155905 ns
+#  Simulation has been stopped
+# Adding file C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\7mul8.asdb ... Done
+# Adding file C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\7mul8.awc ... Done

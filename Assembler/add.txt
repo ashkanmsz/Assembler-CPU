@@ -1,0 +1,4 @@
+Load R0, 5
+Load R1, 3
+Add R0, R1
+Hlt

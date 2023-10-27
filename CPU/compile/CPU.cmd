@@ -1,0 +1,1 @@
+-w -s "C:\Users\user\Downloads\Telegram Desktop\CPU\library.cfg"  -j "C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\projlib.cfg"  -d "C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\compile"   -work CPU  -O3 -e 100 -2002 "C:\Users\user\Downloads\Telegram Desktop\CPU\CPU\src\rom.vhd" 
